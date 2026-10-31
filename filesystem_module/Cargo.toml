@@ -1,0 +1,36 @@
+[package]
+name = "filesystem_module"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "filesystem_module"
+crate-type = ["cdylib", "rlib"]
+
+[profile]
+[profile.release]
+opt-level = 3
+debug = 0
+strip = true
+
+[dependencies]
+[dependencies.windows-sys]
+version = "0.60.2"
+features = [
+    "Win32_Security",
+    "Win32_System_Threading",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_Kernel",
+    "Win32_System_LibraryLoader",
+    "Wdk_Foundation",
+    "Wdk_Storage_FileSystem",
+    "Win32_System_IO",
+    "Wdk_System_Memory",
+    "Win32_Storage_FileSystem",
+    "Wdk_System_SystemServices",
+    "Win32_System_Memory",
+    "Win32_System_ProcessStatus",
+    "Win32_Storage_FileSystem",
+    "Win32_System_SystemInformation",
+]
